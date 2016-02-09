@@ -1,0 +1,156 @@
+/**
+ * Definition of structure elements
+ */
+
+html {
+    font-family: Verdana, sans-serif;
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+	color: #272727;
+	padding:0;
+	margin:0;
+}
+
+/**
+ * aditional reset
+ * [h2 margins]
+ */
+
+h1, h2, h4, ul, li {
+	font-weight:normal;
+	margin:0;
+	padding:0;
+}
+
+p {
+	margin:0;
+}
+
+.header {
+	background: #0099aa;
+	padding: 0.6rem;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+	color:#0099aa;
+	font-weight: normal;
+	padding-bottom: 0.6rem;
+}
+
+.collection-item {
+	list-style: none;
+}
+
+.thumbnail {
+	display:none;
+	filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+	-webkit-filter: grayscale(100%);
+}
+
+li {
+	padding:0.6rem;
+	border-bottom:0.1rem solid #ddd;
+}
+
+@media (min-width: 600px) {
+	.paragraph {
+		font-size: 1.2em;
+	}
+	.thumbnail {
+		display:block;
+		padding-top: 1.2rem;
+	}
+	.collection {
+		width: 100%;
+		overflow: hidden;
+	}
+	.collection-item {
+		width:31%;
+		float:left;
+		border-right:0.1rem solid #ddd;
+		border-bottom: none;
+		height: 26rem;
+		overflow: hidden;
+		padding-top: 1.2rem;
+	}
+
+	.collection-item:nth-child(3n+3) {
+		border-right: none;
+	}
+	/**
+	* Definition of useful classes for Images
+	*/
+
+	.crop-box-image {
+		overflow: hidden;
+		position: relative;
+		height: 12rem;	
+		width: 12rem;
+	}
+
+	.crop-box-image img {
+		bottom: -120%;
+		height: auto;
+		left: -120%;
+		margin: auto; 
+		position: absolute;
+		right: -120%;
+		top: -120% ;
+		width: auto;
+	}
+}
+
+@media (min-width: 992px) {
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.paragraph {
+		font-size: 1.4rem;
+	}
+
+	.collection {
+		display: table;
+	}
+
+	.collection-item {
+		width: 100%;
+		float:none;
+		border-bottom:0.1rem solid #ddd;
+		max-height: 18rem;
+	}
+	.collection-item .description {
+		width:80%;
+		display: table-cell;
+		vertical-align: top;
+		padding:0 1.2rem 0 1.2rem;
+	}
+	.thumbnail {
+		display: table-cell;
+		text-align: right;
+		vertical-align: top;
+		padding: 0 2.6rem 0 0;
+	}
+	.crop-box-image {
+		overflow: hidden;
+		position: relative;
+		height: 18rem;	
+		width: 18rem;
+	}
+
+	.crop-box-image img {
+		bottom: -180%;
+		height: auto;
+		left: -165%;
+		margin: auto; 
+		position: absolute;
+		right: -180%;
+		top: -180% ;
+		width: auto;
+	}
+}
