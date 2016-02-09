@@ -16,13 +16,13 @@ The app needs a server http to be executed. During its development http-server h
 The dependencies has been managed by using Require.
 
 
-### Init ### 
+### Init
 
 The app starts on main.js It is load on index.html using an inline script reference to require.js
 
-### Structure ###
+### Structure
 
-
+```
 +-- css
 |   +-- styles.css
 +-- js
@@ -47,25 +47,26 @@ The app starts on main.js It is load on index.html using an inline script refere
 |		+-- sinon-1.4-2.js
 +-- package.json
 +-- index.html
-
+```
 
 ### Styles ### 
 
 styles keep a mobile first design philosophy. A basic adaptability and responsiveness is covered using media queries. 
 
-```javascript
+```
 @media (min-width: 600px) 
+```
 
-```javascript
+```
 @media (min-width: 992px)
+```
 
-
-### Tests ### 
+### Tests
 
 Some tests has been created using Jasmine. To execute them, head to http://127.0.0.1:8080/test/jasmine/
 
   
-### Next planned upgrading ###
+### Next planned upgrading
 
 - Add more unit tests.
 - Adaptation of the code to use Backbone.js
