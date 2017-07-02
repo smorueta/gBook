@@ -3,5 +3,9 @@
   "version": "0.0.0",
   "description": "List of books from Google Books API",
   "main": "main.js",
-  "author": "__Sara Morueta__"
+  "author": "__Sara Morueta__",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
 }
