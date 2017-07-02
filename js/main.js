@@ -31,7 +31,7 @@ require(["js/collections/bookCollection.js", "js/views/bookView.js"], function(b
 			}
 		};
 
-	})();
+	})( );
 
 	simpleApplication.GoogleBooksPlugin.init();
 	

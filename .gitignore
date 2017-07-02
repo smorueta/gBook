@@ -1,2 +1,5 @@
 node_modules/
 .idea
+=3.8.1
+.DS_Store
+package-lock.json
