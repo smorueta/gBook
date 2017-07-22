@@ -1,4 +1,4 @@
-define(['js/collections/bookCollection', 'js/models/bookModel'], function(bookCollection, bookModel) {
+define(['src/js/collections/bookCollection', 'src/js/models/bookModel'], function(bookCollection, bookModel) {
 
 	describe("testing bookCollection", function() {
 

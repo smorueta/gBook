@@ -1,4 +1,4 @@
-define(["/js/models/bookModel.js"], function (bookModel) {
+define(["/src/js/models/bookModel.js"], function (bookModel) {
 	
 	"use strict";
 	var collection = function() {
