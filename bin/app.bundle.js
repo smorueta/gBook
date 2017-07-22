@@ -67,10 +67,10 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var googleBooks= __webpack_require__(1);
+var googleBooks = __webpack_require__(1);
 
-function googleBookRetrieved (data) {
-    console.log(data);
+function googleBookRetrieved (books) {
+    console.log(books);
 }
 
 var googleBooksPlugin = new googleBooks();
@@ -79,7 +79,9 @@ googleBooksPlugin.getBooks(googleBookRetrieved);
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var bookCollection = __webpack_require__(2);
 
 function googleBooks () {
     this.url = "https://www.googleapis.com/books/v1/volumes?";
@@ -90,11 +92,13 @@ function googleBooks () {
 
 googleBooks.prototype.getBooks = function (callback) {
     var xmlhttp = new XMLHttpRequest();
+    var books;
 
     // TODO: error handler
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            callback(xmlhttp.responseText);
+            books = new bookCollection(xmlhttp.responseText);
+            callback(books.data);
         }
     };
 
@@ -104,6 +108,47 @@ googleBooks.prototype.getBooks = function (callback) {
 }
 
 module.exports = googleBooks;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var bookModel = __webpack_require__(3);
+
+var bookCollection = function(data) {
+
+    var bookList = [];
+    var response = JSON.parse(data);
+    var items;
+
+    if (response.totalItems && response.totalItems > 0) {
+        items = response.items;
+
+        bookList = items.map(function(item){
+            return new bookModel(item);
+        });
+    }
+    this.data = bookList;
+};
+
+module.exports = bookCollection;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+var bookModel = function (data) {
+
+    for (var key in data.volumeInfo) {
+        if (key === 'title' || key === 'description' || key === 'imageLinks' ) {
+            Object.defineProperty(this, key, {
+                value: key === 'description' ? data.volumeInfo[key].substr(0, 200) + "..." : data.volumeInfo[key]
+            });
+        }
+    }
+};
+
+module.exports = bookModel;
 
 /***/ })
 /******/ ]);

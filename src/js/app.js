@@ -1,7 +1,7 @@
-var googleBooks= require('./services/googleBooks');
+var googleBooks = require('./services/googleBooks');
 
-function googleBookRetrieved (data) {
-    console.log(data);
+function googleBookRetrieved (books) {
+    console.log(books);
 }
 
 var googleBooksPlugin = new googleBooks();

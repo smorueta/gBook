@@ -1,29 +1,19 @@
-define(["/src/js/models/bookModel.js"], function (bookModel) {
-	
-	"use strict";
-	var collection = function() {
+var bookModel = require('../models/bookModel');
 
-		return {
-	    model: bookModel,
+var bookCollection = function(data) {
 
-	   	defineNewCollection: function(data) {
-	   		
-	   		var bookList = [],
-	   			response = JSON.parse(data),
-	   			items;
-	   			
-	   		if (response.totalItems && response.totalItems > 0) { 		
-	   			items = response.items;
-					
-					bookList = items.map(function(item){ 
-						return new bookModel(item);
-					});
-	   		}
-	   		return bookList;
-	   	}
-	  };
+    var bookList = [];
+    var response = JSON.parse(data);
+    var items;
 
-	};
+    if (response.totalItems && response.totalItems > 0) {
+        items = response.items;
 
-	return collection();	
-});
+        bookList = items.map(function(item){
+            return new bookModel(item);
+        });
+    }
+    this.data = bookList;
+};
+
+module.exports = bookCollection;

@@ -1,3 +1,5 @@
+var bookCollection = require('../collections/bookCollection.js');
+
 function googleBooks () {
     this.url = "https://www.googleapis.com/books/v1/volumes?";
     this.query = 'javascript';
@@ -7,11 +9,13 @@ function googleBooks () {
 
 googleBooks.prototype.getBooks = function (callback) {
     var xmlhttp = new XMLHttpRequest();
+    var books;
 
     // TODO: error handler
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            callback(xmlhttp.responseText);
+            books = new bookCollection(xmlhttp.responseText);
+            callback(books.data);
         }
     };
 
