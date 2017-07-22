@@ -1,7 +1,9 @@
 var googleBooks = require('./services/googleBooks');
+var booksView = require('./views/booksView');
 
 function googleBookRetrieved (books) {
-    console.log(books);
+    var appView = new booksView();
+    appView.render(books);
 }
 
 var googleBooksPlugin = new googleBooks();
