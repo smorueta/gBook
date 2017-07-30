@@ -3,4 +3,4 @@ node_modules/
 =3.8.1
 .DS_Store
 package-lock.json
-app.bundle.js
+bin/*
