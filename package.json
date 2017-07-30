@@ -4,16 +4,13 @@
   "description": "List of books from Google Books API",
   "main": "main.js",
   "author": "__Sara Morueta__",
-  "dependencies": {
-    "requirejs": "^2.3.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "webpack": "^3.3.0",
     "eslint": "^4.1.1",
     "eslint-config-google": "^0.8.0",
     "http-server": "^0.10.0",
     "jasmine": "^2.6.0",
-    "xmlhttprequest": "^1.8.0"
+    "webpack": "^3.3.0"
   },
   "scripts": {
     "start": "webpack --config webpack.config.js",
