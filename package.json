@@ -11,9 +11,12 @@
     "webpack": "^3.3.0",
     "eslint": "^4.1.1",
     "eslint-config-google": "^0.8.0",
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "jasmine": "^2.6.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "start": "webpack --config webpack.config.js",
+    "test": "jasmine"
   }
 }
