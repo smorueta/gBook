@@ -1,8 +1,6 @@
 {
   "name": "Google_Books_API",
-  "version": "0.0.0",
   "description": "List of books from Google Books API",
-  "main": "main.js",
   "author": "__Sara Morueta__",
   "dependencies": {},
   "devDependencies": {
@@ -10,6 +8,7 @@
     "eslint-config-google": "^0.8.0",
     "http-server": "^0.10.0",
     "jasmine": "^2.6.0",
+    "sinon": "^2.4.1",
     "webpack": "^3.3.0"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 var bookCollection = require('../collections/bookCollection.js');
 
-function googleBooks () {
+var googleBooks = function googleBooks () {
     this.url = "https://www.googleapis.com/books/v1/volumes?";
     this.query = 'javascript';
     this.orderBy = 'newest';
